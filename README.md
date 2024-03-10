@@ -1,7 +1,7 @@
 # NOC App
 
 ## Description
-
+This app allow    
 
 ## Features
 - Feature 1: 
@@ -14,7 +14,15 @@
 3. Start the application: `npm start`
 
 ## Usage
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+1. Clone file .env.template to .env
+2. Setup enviroment variables
+```
+NODE_ENV=
+API_PORT=
+MAILER_EMAIL=
+MAILER_SECRET_KEY=
+MAILER_SERVICE=
+```
 
 ## Contributing
 Contributions are welcome! 
