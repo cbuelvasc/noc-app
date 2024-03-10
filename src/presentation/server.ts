@@ -1,9 +1,12 @@
-import { LogRepositoryImpl } from './../domain/infrastructure/repositories/log.repository.impl';
-import { FyleSystemDatasource } from './../domain/infrastructure/datasources/fyle-system.datasource';
+import { SendEmailLogs } from '../domain/use-cases/email/send-email-logs';
+import { EmailService } from './email/email.service';
+import { FyleSystemDatasource } from '../infrastructure/datasources/fyle-system.datasource';
+import { LogRepositoryImpl } from '../infrastructure/repositories/log.repository.impl';
 import { CheckService } from './../domain/use-cases/cheks/check-service';
 import { CronService } from './cron/cron-service';
 
 const fileSystemLogRepository = new LogRepositoryImpl(new FyleSystemDatasource());
+const emailService = new EmailService();
 
 export class Server {
 
@@ -27,5 +30,8 @@ export class Server {
                 ).execute('http://localhost:3000');
             },
         );
+
+        new SendEmailLogs(fileSystemLogRepository, emailService)
+            .execute(['cbuelvasc@gmail.com', 'cbuelvasc@hotmail.com']);
     }
 }

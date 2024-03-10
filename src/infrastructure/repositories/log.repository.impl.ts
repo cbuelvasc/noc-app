@@ -1,6 +1,6 @@
-import { LogSeverityLevel, LogEntity } from './../../entities/log.entity';
-import { LogRepository } from '../../repository/log.repository';
-import { LogDataSource } from '../../datasources/log.datasource';
+import { LogSeverityLevel, LogEntity } from '../../domain/entities/log.entity';
+import { LogRepository } from '../../domain/repository/log.repository';
+import { LogDataSource } from '../../domain/datasources/log.datasource';
 
 export class LogRepositoryImpl implements LogRepository {
 
